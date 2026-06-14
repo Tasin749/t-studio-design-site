@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T-Design Studio | Nurul Motasim Tasin</title>
     <meta name="description" content="T-Design Studio - Helping brands grow through strategic visual design, impactful advertising creatives, memorable brand identities, and motion graphics.">
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     
     <style>
@@ -186,10 +188,32 @@
             align-items: center;
         }
 
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .logo {
             font-size: 1.25rem;
             font-weight: 700;
             letter-spacing: -0.02em;
+        }
+
+        .logo-separator {
+            width: 1px;
+            height: 16px;
+            background-color: var(--border);
+        }
+
+        .top-left-contact {
+            font-size: 0.875rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .top-left-contact:hover {
+            color: var(--primary);
         }
 
         .nav-links {
@@ -377,7 +401,6 @@
 
         .project-card {
             cursor: pointer;
-            group: project;
         }
 
         .project-img {
@@ -445,12 +468,18 @@
             background: var(--border);
             aspect-ratio: 1;
             position: relative;
+            cursor: pointer;
         }
         
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
 
         /* Services */
@@ -508,32 +537,38 @@
             gap: 0.5rem;
         }
 
-        /* Testimonials */
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: var(--surface);
-            padding: 2.5rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border);
-        }
-
-        .quote-icon {
-            color: var(--border);
-            width: 32px;
-            height: 32px;
-            margin-bottom: 1rem;
-        }
-
-        /* Contact Section */
+        /* Contact Section & Social Media Hub */
         .contact-wrap {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
+        }
+
+        .contact-networks {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .network-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .network-link:hover {
+            color: var(--muted);
+            transform: translateX(6px);
+        }
+
+        .network-link svg {
+            width: 22px;
+            height: 22px;
         }
 
         .form-group {
@@ -593,7 +628,7 @@
         
         .social-icons {
             display: flex;
-            gap: 1rem;
+            gap: 1.25rem;
         }
 
         .footer-bottom {
@@ -725,17 +760,29 @@
             .gallery-grid { grid-template-columns: 1fr; }
             .case-study-body { padding: 2rem; }
         }
+
+        @media (max-width: 480px) {
+            .logo-separator, .top-left-contact {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Loader -->
     <div class="loader" id="loader">
         <div class="spinner"></div>
     </div>
 
+    <!-- Navigation -->
     <header id="header">
         <div class="container nav-container">
-            <a href="#" class="logo">T-Design Studio</a>
+            <div class="logo-group">
+                <a href="#" class="logo">T-Design Studio</a>
+                <div class="logo-separator"></div>
+                <a href="mailto:email.tasin78@gmail.com" class="top-left-contact">email.tasin78@gmail.com</a>
+            </div>
             <button class="menu-toggle" id="menuToggle">
                 <i data-feather="menu"></i>
             </button>
@@ -750,6 +797,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content reveal">
@@ -766,6 +814,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="section-padding" style="background: var(--surface);">
         <div class="container">
             <div class="about-grid">
@@ -804,6 +853,7 @@
         </div>
     </section>
 
+    <!-- Professional Interests Section -->
     <section class="section-padding">
         <div class="container">
             <div class="text-center max-w-3xl reveal">
@@ -825,6 +875,7 @@
         </div>
     </section>
 
+    <!-- Mission Section -->
     <section class="section-padding mission">
         <div class="container reveal">
             <span class="section-tag" style="color: rgba(255,255,255,0.5);">Mission Statement</span>
@@ -832,6 +883,7 @@
         </div>
     </section>
 
+    <!-- Credibility Section -->
     <section class="container reveal">
         <div class="stats-grid text-center">
             <div class="stat-item">
@@ -849,6 +901,7 @@
         </div>
     </section>
 
+    <!-- Featured Projects Section -->
     <section id="projects" class="section-padding" style="background: var(--surface);">
         <div class="container">
             <div class="reveal">
@@ -857,15 +910,17 @@
             </div>
             
             <div class="projects-grid">
-                <div class="project-card reveal" onclick="openCaseStudy('Social Media Campaign', 'Social Media Design')">
+                <!-- Project 1 -->
+                <div class="project-card reveal" onclick="openCaseStudy('Global Tech Campaign', 'Social Media Design', 'https://i.ibb.co.com/8LLvmsMW/New-Project-2.png')">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800" alt="Social Media Design">
+                        <img src="https://i.ibb.co.com/8LLvmsMW/New-Project-2.png" alt="Social Media Design">
                     </div>
                     <div class="project-category">Social Media Design</div>
                     <h3>Global Tech Campaign</h3>
                     <p>High-converting social media creatives for a modern tech startup.</p>
                 </div>
-                <div class="project-card reveal" onclick="openCaseStudy('Urban Ad Posters', 'Advertising Posters')">
+                <!-- Project 2 -->
+                <div class="project-card reveal" onclick="openCaseStudy('Urban Ad Posters', 'Advertising Posters', 'https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800')">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800" alt="Advertising Posters">
                     </div>
@@ -873,7 +928,8 @@
                     <h3>Urban Ad Posters</h3>
                     <p>Impactful out-of-home advertising for a lifestyle brand.</p>
                 </div>
-                <div class="project-card reveal" onclick="openCaseStudy('Aura Brand Identity', 'Branding & Logo Design')">
+                <!-- Project 3 -->
+                <div class="project-card reveal" onclick="openCaseStudy('Aura Brand Identity', 'Branding & Logo Design', 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=800')">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=800" alt="Branding & Logo Design">
                     </div>
@@ -881,7 +937,8 @@
                     <h3>Aura Brand Identity</h3>
                     <p>Memorable brand identity and guidelines for an e-commerce platform.</p>
                 </div>
-                <div class="project-card reveal" onclick="openCaseStudy('Eco Packaging', 'Packaging Design')">
+                <!-- Project 4 -->
+                <div class="project-card reveal" onclick="openCaseStudy('Eco Packaging', 'Packaging Design', 'https://images.unsplash.com/photo-1605810754181-7925e04b4d66?auto=format&fit=crop&q=80&w=800')">
                     <div class="project-img">
                         <img src="https://images.unsplash.com/photo-1605810754181-7925e04b4d66?auto=format&fit=crop&q=80&w=800" alt="Packaging Design">
                     </div>
@@ -889,26 +946,11 @@
                     <h3>Eco Packaging</h3>
                     <p>Sustainable and visually striking packaging solutions.</p>
                 </div>
-                <div class="project-card reveal" onclick="openCaseStudy('Product Launch Promo', 'Motion Graphics')">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800" alt="Motion Graphics">
-                    </div>
-                    <div class="project-category">Motion Graphics</div>
-                    <h3>Product Launch Promo</h3>
-                    <p>Dynamic motion graphics to introduce a new product line.</p>
-                </div>
-                <div class="project-card reveal" onclick="openCaseStudy('Rebrand Strategy', 'Branding & Logo Design')">
-                    <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&q=80&w=800" alt="Brand Strategy">
-                    </div>
-                    <div class="project-category">Branding & Logo Design</div>
-                    <h3>Rebrand Strategy</h3>
-                    <p>Complete visual overhaul to position an agency as a premium player.</p>
-                </div>
             </div>
         </div>
     </section>
 
+    <!-- Portfolio Gallery -->
     <section class="section-padding">
         <div class="container">
             <div class="text-center reveal mb-5">
@@ -921,20 +963,34 @@
                 <button class="filter-btn" data-filter="ads">Advertising</button>
                 <button class="filter-btn" data-filter="brand">Branding</button>
                 <button class="filter-btn" data-filter="pack">Packaging</button>
-                <button class="filter-btn" data-filter="motion">Motion</button>
+                <button class="filter-btn" data-filter="motion">Motion Graphics</button>
             </div>
 
             <div class="gallery-grid reveal">
-                <div class="gallery-item" data-category="social"><img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&q=80&w=600" alt="Gallery"></div>
-                <div class="gallery-item" data-category="brand"><img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=600" alt="Gallery"></div>
-                <div class="gallery-item" data-category="ads"><img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=600" alt="Gallery"></div>
-                <div class="gallery-item" data-category="pack"><img src="https://images.unsplash.com/photo-1530587191344-884ed0e99dce?auto=format&fit=crop&q=80&w=600" alt="Gallery"></div>
-                <div class="gallery-item" data-category="motion"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Gallery"></div>
-                <div class="gallery-item" data-category="social"><img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?auto=format&fit=crop&q=80&w=600" alt="Gallery"></div>
+                <!-- Social Media Images Added & Configured Dynamic Modals -->
+                <div class="gallery-item" data-category="social" onclick="openCaseStudy('Social Creative Layout', 'Social Media', 'https://i.ibb.co.com/8LLvmsMW/New-Project-2.png')">
+                    <img src="https://i.ibb.co.com/8LLvmsMW/New-Project-2.png" alt="Social Media 1">
+                </div>
+                <div class="gallery-item" data-category="social" onclick="openCaseStudy('Short-Form Strategic Concept', 'Social Media', 'https://i.ibb.co.com/zHXL9f9f/Chat-GPT-Image-Jun-11-2026-11-04-54-PM.png')">
+                    <img src="https://i.ibb.co.com/zHXL9f9f/Chat-GPT-Image-Jun-11-2026-11-04-54-PM.png" alt="Social Media 2">
+                </div>
+                <div class="gallery-item" data-category="brand" onclick="openCaseStudy('Aura Logo System', 'Branding', 'https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=600')">
+                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=600" alt="Gallery">
+                </div>
+                <div class="gallery-item" data-category="ads" onclick="openCaseStudy('Premium Poster Art', 'Advertising', 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=600')">
+                    <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=600" alt="Gallery">
+                </div>
+                <div class="gallery-item" data-category="pack" onclick="openCaseStudy('Minimalist Package Box', 'Packaging', 'https://images.unsplash.com/photo-1530587191344-884ed0e99dce?auto=format&fit=crop&q=80&w=600')">
+                    <img src="https://images.unsplash.com/photo-1530587191344-884ed0e99dce?auto=format&fit=crop&q=80&w=600" alt="Gallery">
+                </div>
+                <div class="gallery-item" data-category="motion" onclick="openCaseStudy('Kinetic Identity Piece', 'Motion Graphics', 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600')">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Gallery">
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="section-padding" style="background: var(--surface);">
         <div class="container">
             <div class="reveal text-center max-w-3xl">
@@ -992,6 +1048,7 @@
         </div>
     </section>
 
+    <!-- Skills & Tools -->
     <section id="skills" class="section-padding">
         <div class="container">
             <div class="about-grid">
@@ -1022,36 +1079,30 @@
         </div>
     </section>
 
-    <section class="section-padding" style="background: var(--surface);">
-        <div class="container">
-            <div class="reveal text-center max-w-3xl">
-                <span class="section-tag">Client Feedback</span>
-                <h2>What People Say</h2>
-            </div>
-            <div class="testimonial-grid reveal" style="margin-top: 3rem;">
-                <div class="testimonial-card">
-                    <i data-feather="message-square" class="quote-icon"></i>
-                    <p>"T-Design Studio completely transformed our brand identity. The strategic approach to our visual problem was outstanding. Professional, communicative, and immensely creative."</p>
-                    <h4 style="margin-top: 1.5rem;">Sarah Jenkins</h4>
-                    <p style="font-size: 0.875rem; margin:0;">Marketing Director, TechStart</p>
-                </div>
-                <div class="testimonial-card">
-                    <i data-feather="message-square" class="quote-icon"></i>
-                    <p>"Nurul's advertising creatives drastically improved our conversion rates. His understanding of design hierarchy and modern aesthetics is top-tier. A true asset to our campaigns."</p>
-                    <h4 style="margin-top: 1.5rem;">David Chen</h4>
-                    <p style="font-size: 0.875rem; margin:0;">E-commerce Founder</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding">
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding" style="background: var(--surface);">
         <div class="container">
             <div class="contact-wrap">
                 <div class="reveal">
                     <span class="section-tag">Contact</span>
                     <h2>Let's Build Something Great Together</h2>
-                    <p>Looking to elevate your brand's visual presence? Reach out to discuss your project requirements.</p>
+                    <p>Looking to elevate your brand's visual presence? Reach out to discuss your project requirements or connect across networks directly.</p>
+                    
+                    <!-- Integrated Verified Social Accounts Grid -->
+                    <div class="contact-networks">
+                        <a href="mailto:email.tasin78@gmail.com" class="network-link">
+                            <i data-feather="mail"></i> <span>email.tasin78@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nurul-motasim-tasin-0b2a063b1/" target="_blank" rel="noopener" class="network-link">
+                            <i data-feather="linkedin"></i> <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61589243996397" target="_blank" rel="noopener" class="network-link">
+                            <i data-feather="facebook"></i> <span>Facebook Page</span>
+                        </a>
+                        <a href="https://www.instagram.com/_tasin_09/" target="_blank" rel="noopener" class="network-link">
+                            <i data-feather="instagram"></i> <span>Instagram Handle</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="reveal">
                     <form onsubmit="event.preventDefault(); alert('Message sent successfully! (Demo)');">
@@ -1074,12 +1125,13 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h3 style="color: white;">T-Design Studio</h3>
-                    <p style="color: #A0A0A0; font-size: 0.95rem;">Designing Visuals That Drive Results.</p>
+                    <h3 style="color: white; margin-bottom: 0.5rem;">T-Design Studio</h3>
+                    <p style="color: #A0A0A0; font-size: 0.95rem; margin-bottom: 1rem;">Designing Visuals That Drive Results.</p>
                     <p style="color: #A0A0A0; font-size: 0.85rem;">Founded & Operated by<br>Nurul Motasim Tasin</p>
                 </div>
                 <div class="footer-col">
@@ -1094,10 +1146,10 @@
                 <div class="footer-col">
                     <h4>Connect</h4>
                     <div class="social-icons">
-                        <a href="#" style="color: #A0A0A0;"><i data-feather="instagram"></i></a>
-                        <a href="#" style="color: #A0A0A0;"><i data-feather="linkedin"></i></a>
-                        <a href="#" style="color: #A0A0A0;"><i data-feather="facebook"></i></a>
-                        <a href="#" style="color: #A0A0A0;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path><path d="M5.27 17a2 2 0 0 0-1.27 1.5v2h16v-2a2 2 0 0 0-1.27-1.5"></path></svg></a>
+                        <a href="https://www.instagram.com/_tasin_09/" target="_blank" rel="noopener" style="color: #A0A0A0;"><i data-feather="instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/nurul-motasim-tasin-0b2a063b1/" target="_blank" rel="noopener" style="color: #A0A0A0;"><i data-feather="linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61589243996397" target="_blank" rel="noopener" style="color: #A0A0A0;"><i data-feather="facebook"></i></a>
+                        <a href="mailto:email.tasin78@gmail.com" style="color: #A0A0A0;"><i data-feather="mail"></i></a>
                     </div>
                 </div>
             </div>
@@ -1108,11 +1160,12 @@
         </div>
     </footer>
 
+    <!-- Case Study Modal -->
     <div class="modal-overlay" id="caseStudyModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeCaseStudy()"><i data-feather="x"></i></button>
             <div class="case-study-header">
-                <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=1200" alt="Case Study Hero" id="modalImage">
+                <img src="" alt="Case Study Image Target" id="modalImage">
             </div>
             <div class="case-study-body">
                 <span class="section-tag" id="modalCategory">Category</span>
@@ -1120,32 +1173,33 @@
                 
                 <div class="cs-section">
                     <h3>Project Overview & Client Background</h3>
-                    <p>The client is a fast-growing brand looking to establish a dominant presence in their market. They approached T-Design Studio to completely rethink their visual communication and build a cohesive system that reflects their premium quality.</p>
+                    <p>The client is a premium entity seeking to scale operations globally. They looked to T-Design Studio to restructure and redefine their complete aesthetic footprint across core modern media landscapes.</p>
                 </div>
                 
                 <div class="cs-section">
                     <h3>Problem Statement & Objective</h3>
-                    <p>The existing visuals were fragmented, lacking a clear hierarchy, and failed to communicate the brand's core values to their international target audience. The objective was to create a comprehensive design solution that drives engagement, builds trust, and solves these critical communication gaps.</p>
+                    <p>Prior positioning lacked asset continuity and dynamic styling, failing to generate engagement from international audience target segments. The structural goal was to forge clear design hierarchies through strategic engineering.</p>
                 </div>
 
                 <div class="cs-section">
                     <h3>Research & Creative Strategy</h3>
-                    <p>Through extensive market research and competitive analysis, a minimal, Apple-inspired aesthetic was chosen. The strategy relied heavily on generous white space, strong typography, and a restricted color palette to instantly communicate premium quality and professionalism.</p>
+                    <p>Executing detailed discovery sprints indicated that sleek layouts paired with pristine structural asymmetry deliver maximum retention. Brand values are layered tightly into minimal high-end configurations.</p>
                 </div>
 
                 <div class="cs-section">
                     <h3>Design Process & Solution</h3>
-                    <p>The process moved from low-fidelity wireframing and sketching into high-fidelity digital creation. The final design presentation includes a cohesive suite of assets optimized for cross-platform delivery. The solution perfectly aligns the visual identity with the brand's strategic goals.</p>
+                    <p>Production scaled meticulously from system frameworks into fully stylized deliverables. Every geometric trace and asset orientation serves crisp user interaction parameters, resolving key workflow friction points seamlessly.</p>
                 </div>
 
                 <div class="cs-section">
                     <h3>Outcome, Impact & Key Takeaways</h3>
-                    <p>Post-launch, the new visual direction resulted in a noticeable increase in engagement metrics and positive customer feedback. The key takeaway from this project is that design is not just about making things look good—it is a strategic tool for solving real business problems.</p>
+                    <p>The solution yielded measurable growth spikes across strategic engagement metrics. Modern design remains an active tactical engine when tailored with extreme precision to handle absolute corporate and product communication goals.</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- JavaScript -->
     <script>
         // Initialize Icons
         feather.replace();
@@ -1206,7 +1260,6 @@
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 
@@ -1230,16 +1283,18 @@
             });
         });
 
-        // Case Study Modal Logic
+        // Case Study Modal Logic with Dynamic Image Updates
         const modal = document.getElementById('caseStudyModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalCategory = document.getElementById('modalCategory');
+        const modalImage = document.getElementById('modalImage');
         
-        function openCaseStudy(title, category) {
+        function openCaseStudy(title, category, imgSrc) {
             modalTitle.innerText = title;
             modalCategory.innerText = category;
+            modalImage.src = imgSrc || 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=1200';
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            document.body.style.overflow = 'hidden';
         }
 
         function closeCaseStudy() {
@@ -1247,7 +1302,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal on outside click
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 closeCaseStudy();
