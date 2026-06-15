@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>T-Design Studio | Nurul Motasim Tasin</title>
     <meta name="description" content="T-Design Studio - Helping brands grow through strategic visual design, impactful advertising creatives, memorable brand identities, and motion graphics.">
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     
     <style>
@@ -728,10 +730,12 @@
 </head>
 <body>
 
+    <!-- Loader -->
     <div class="loader" id="loader">
         <div class="spinner"></div>
     </div>
 
+    <!-- Navigation -->
     <header id="header">
         <div class="container nav-container">
             <div class="logo-group">
@@ -753,6 +757,7 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content reveal">
@@ -769,6 +774,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="section-padding" style="background: var(--surface);">
         <div class="container">
             <div class="about-grid">
@@ -807,6 +813,7 @@
         </div>
     </section>
 
+    <!-- Professional Interests Section -->
     <section class="section-padding">
         <div class="container">
             <div class="text-center max-w-3xl reveal">
@@ -828,6 +835,7 @@
         </div>
     </section>
 
+    <!-- Mission Section -->
     <section class="section-padding mission">
         <div class="container reveal">
             <span class="section-tag" style="color: rgba(255,255,255,0.5);">Mission Statement</span>
@@ -835,6 +843,7 @@
         </div>
     </section>
 
+    <!-- Credibility Section -->
     <section class="container reveal">
         <div class="stats-grid text-center">
             <div class="stat-item">
@@ -852,6 +861,7 @@
         </div>
     </section>
 
+    <!-- Portfolio Gallery Section -->
     <section id="projects" class="section-padding" style="background: var(--surface);">
         <div class="container">
             <div class="text-center reveal mb-5">
@@ -862,45 +872,28 @@
             
             <div class="filters reveal">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="social">Social Media</button>
-                <button class="filter-btn" data-filter="ads">Advertising</button>
                 <button class="filter-btn" data-filter="brand">Branding</button>
                 <button class="filter-btn" data-filter="pack">Packaging</button>
-                <button class="filter-btn" data-filter="motion">Motion Graphics</button>
             </div>
 
             <div class="gallery-grid reveal">
-                <div class="gallery-item" data-category="social" onclick="openCaseStudy('Social Creative Layout', 'Social Media', 'https://i.ibb.co.com/8LLvmsMW/New-Project-2.png')">
-                    <img src="https://i.ibb.co.com/8LLvmsMW/New-Project-2.png" alt="Social Media Production 1">
-                </div>
-                <div class="gallery-item" data-category="social" onclick="openCaseStudy('Short-Form Strategic Concept', 'Social Media', 'https://i.ibb.co.com/zHXL9f9f/Chat-GPT-Image-Jun-11-2026-11-04-54-PM.png')">
-                    <img src="https://i.ibb.co.com/zHXL9f9f/Chat-GPT-Image-Jun-11-2026-11-04-54-PM.png" alt="Social Media Production 2">
-                </div>
+                <!-- Branding Section -->
                 <div class="gallery-item" data-category="brand" onclick="openCaseStudy('Calligraphy Names of Allah', 'Branding', 'https://i.ibb.co.com/N62p3LhP/Calligraphy-Names-of-Allah-Al-Mateen-Instagram-Post.png')">
                     <img src="https://i.ibb.co.com/N62p3LhP/Calligraphy-Names-of-Allah-Al-Mateen-Instagram-Post.png" alt="Calligraphy Names of Allah">
                 </div>
-                <div class="gallery-item" data-category="brand" onclick="openCaseStudy('Aura Logo System', 'Branding', 'https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=600')">
-                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=600" alt="Gallery Asset">
-                </div>
-                <div class="gallery-item" data-category="ads" onclick="openCaseStudy('Premium Poster Art', 'Advertising', 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=600')">
-                    <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=600" alt="Gallery Asset">
-                </div>
+                
+                <!-- Packaging Section -->
                 <div class="gallery-item" data-category="pack" onclick="openCaseStudy('Food Bag Mockup', 'Packaging', 'https://i.ibb.co.com/SXBjS8yY/Free-Food-Bag-Mockup-1.png')">
                     <img src="https://i.ibb.co.com/SXBjS8yY/Free-Food-Bag-Mockup-1.png" alt="Food Bag Mockup">
                 </div>
                 <div class="gallery-item" data-category="pack" onclick="openCaseStudy('Soda Can Mockup', 'Packaging', 'https://i.ibb.co.com/mV1WG2z3/Soda-Can-Mockup-3.png')">
                     <img src="https://i.ibb.co.com/mV1WG2z3/Soda-Can-Mockup-3.png" alt="Soda Can Mockup">
                 </div>
-                <div class="gallery-item" data-category="pack" onclick="openCaseStudy('Minimalist Package Box', 'Packaging', 'https://images.unsplash.com/photo-1530587191344-884ed0e99dce?auto=format&fit=crop&q=80&w=600')">
-                    <img src="https://images.unsplash.com/photo-1530587191344-884ed0e99dce?auto=format&fit=crop&q=80&w=600" alt="Gallery Asset">
-                </div>
-                <div class="gallery-item" data-category="motion" onclick="openCaseStudy('Kinetic Identity Piece', 'Motion Graphics', 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600')">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Gallery Asset">
-                </div>
             </div>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="section-padding">
         <div class="container">
             <div class="reveal text-center max-w-3xl">
@@ -958,6 +951,7 @@
         </div>
     </section>
 
+    <!-- Skills & Tools -->
     <section id="skills" class="section-padding" style="background: var(--surface);">
         <div class="container">
             <div class="about-grid">
@@ -988,6 +982,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="contact-wrap">
@@ -1032,6 +1027,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1066,6 +1062,7 @@
         </div>
     </footer>
 
+    <!-- Case Study Modal -->
     <div class="modal-overlay" id="caseStudyModal">
         <div class="modal-content">
             <button class="modal-close" onclick="closeCaseStudy()"><i data-feather="x"></i></button>
@@ -1104,6 +1101,7 @@
         </div>
     </div>
 
+    <!-- JavaScript -->
     <script>
         // Initialize Icons
         feather.replace();
