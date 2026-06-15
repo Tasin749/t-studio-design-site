@@ -3,1221 +3,527 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-Design Studio | Nurul Motasim Tasin</title>
-    <meta name="description" content="T-Design Studio - Helping brands grow through strategic visual design, impactful advertising creatives, memorable brand identities, and motion graphics.">
-    <!-- Fonts -->
+    <title>T-Design Studio | Premium Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Icons -->
-    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-onawesome/6.4.0/css/all.min.css">
     
     <style>
-        /* CSS Variables - Color System */
+        /* --- PREMIUM APPPLE-INSPIRED MINIIMALIST STYLES --- */
         :root {
-            --primary: #000000;
-            --secondary: #FFFFFF;
-            --background: #F8F8F8;
-            --surface: #FFFFFF;
-            --border: #EAEAEA;
-            --text: #111111;
-            --muted: #666666;
+            --bg-color: #000000;
+            --card-bg: #0a0a0c;
+            --accent-color: #ffffff;
+            --text-main: #f5f5f7;
+            --text-secondary: #86868b;
+            --border-color: #1d1d1f;
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --radius-md: 12px;
-            --radius-lg: 24px;
         }
 
-        /* Reset & Base */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             overflow-x: hidden;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--text);
-            transition: var(--transition);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* Typography Hierarchy */
-        h1, h2, h3, h4, h5 {
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            color: var(--primary);
-        }
-
-        h1 { font-size: clamp(3rem, 6vw, 5.5rem); margin-bottom: 1.5rem; }
-        h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1rem; }
-        h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 0.75rem; }
-        p { font-size: 1.125rem; color: var(--muted); margin-bottom: 1.5rem; }
-        
-        .section-tag {
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        /* Layout Utility */
-        .container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        .section-padding {
-            padding: 8rem 0;
-        }
-
-        .text-center { text-align: center; }
-        .max-w-3xl { max-width: 48rem; margin-inline: auto; }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            font-weight: 500;
-            border-radius: 100px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: var(--secondary);
-        }
-
-        .btn-primary:hover {
-            background-color: #333;
-            transform: translateY(-2px);
-            color: var(--secondary);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary);
-            border-color: var(--border);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        /* Loader */
-        .loader {
-            position: fixed;
-            inset: 0;
-            background: var(--surface);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.8s ease;
-        }
-        .loader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border);
-            border-top-color: var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        /* Navigation */
+        /* --- NAVIGATION --- */
         header {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 1.5rem 0;
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo-group {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .logo-separator {
-            width: 1px;
-            height: 16px;
-            background-color: var(--border);
-        }
-
-        .top-left-contact {
-            font-size: 0.875rem;
-            color: var(--muted);
-            font-weight: 500;
-        }
-
-        .top-left-contact:hover {
-            color: var(--primary);
-        }
-
-        .nav-links {
+            letter-spacing: -0.5px;
+            color: var(--accent-color);
+            text-decoration: none;
             display: flex;
-            gap: 2.5rem;
             align-items: center;
+            gap: 8px;
         }
 
-        .nav-links a {
-            font-size: 0.95rem;
+        .logo i {
+            font-size: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 500;
-            color: var(--muted);
+            transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
+        nav ul li a:hover {
+            color: var(--accent-color);
         }
 
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--primary);
-        }
-
-        /* Hero Section */
+        /* --- HERO SECTION --- */
         .hero {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding-top: 5rem;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2.5rem;
-        }
-
-        /* About Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .about-text h3 {
-            margin-top: 2rem;
-            font-size: 1.25rem;
-        }
-        
-        .about-list {
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.5rem;
-            color: var(--muted);
-            font-size: 1.125rem;
-        }
-
-        /* Education Timeline */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 4rem auto 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 1px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -4px;
-            top: 6px;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: var(--primary);
-            box-shadow: 0 0 0 4px var(--background);
-        }
-
-        .timeline-date {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Interests & Expertise */
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .interest-card {
-            background: var(--surface);
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border);
-            transition: var(--transition);
-        }
-
-        .interest-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-        }
-
-        /* Mission */
-        .mission {
-            background: var(--primary);
-            color: var(--secondary);
             text-align: center;
+            padding: 0 2rem;
+            background: radial-gradient(circle at 50% 40%, #111115 0%, #000000 70%);
         }
 
-        .mission h2 {
-            color: var(--secondary);
+        .hero-tag {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s 0.2s forwards;
         }
 
-        .mission p {
-            color: #A0A0A0;
-            font-size: clamp(1.25rem, 3vw, 2rem);
-            line-height: 1.4;
-            max-width: 1000px;
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s 0.4s forwards;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s 0.6s forwards;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--accent-color);
+            color: #000000;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s 0.8s forwards;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+        }
+
+        /* --- SECTION BASE --- */
+        section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* Credibility Stats */
-        .stats-grid {
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header span {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-top: 0.5rem;
+        }
+
+        /* --- SERVICES --- */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 4rem 0;
-            margin: 4rem 0;
         }
 
-        .stat-item h3 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            font-size: 1rem;
-            margin: 0;
-        }
-
-        /* Portfolio Gallery (Masonry & Filters) */
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: none;
-            border: 1px solid var(--border);
-            padding: 0.5rem 1.5rem;
-            border-radius: 100px;
-            cursor: pointer;
-            font-size: 0.95rem;
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
             transition: var(--transition);
-            color: var(--muted);
         }
 
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary);
-            color: var(--secondary);
-            border-color: var(--primary);
+        .service-card:hover {
+            border-color: #333336;
+            transform: translateY(-4px);
         }
 
+        .service-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- PORTFOLIO GALLERY --- */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
 
         .gallery-item {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            background: var(--border);
-            aspect-ratio: 1;
             position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16 / 10;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             cursor: pointer;
         }
-        
+
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: var(--transition);
         }
 
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
 
-        /* Services */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .service-card {
-            background: var(--surface);
-            padding: 3rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border);
-        }
-
-        .service-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 2rem;
-            color: var(--primary);
-        }
-
-        .service-card ul {
-            margin-top: 1.5rem;
-            border-top: 1px solid var(--border);
-            padding-top: 1.5rem;
-        }
-
-        .service-card li {
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            color: var(--muted);
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            opacity: 0;
+            transition: var(--transition);
         }
 
-        /* Skills & Tools */
-        .skills-container {
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .gallery-overlay h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        /* --- INDUSTRY STANDARD TOOLS --- */
+        .tools-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
-        .skill-tag {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 0.75rem 1.5rem;
-            border-radius: 100px;
+        .tool-tag {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
             font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 10px;
+            transition: var(--transition);
         }
 
-        /* Contact Section & Social Media Hub */
-        .contact-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+        .tool-tag:hover {
+            border-color: var(--accent-color);
+            background-color: #ffffff;
+            color: #000000;
         }
 
-        .contact-networks {
-            margin-top: 2.5rem;
+        /* --- CONTACT & FOOTER --- */
+        .contact-content {
+            background: linear-gradient(180deg, var(--card-bg) 0%, #000000 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-content h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .contact-content p {
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .social-links {
             display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
-        .network-link {
+        .social-icon {
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            font-size: 1.125rem;
+            gap: 8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.1rem;
             font-weight: 500;
-            color: var(--text);
             transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
         }
 
-        .network-link:hover {
-            color: var(--muted);
-            transform: translateX(6px);
+        .social-icon:hover {
+            color: var(--text-secondary);
+            transform: translateY(-2px);
         }
 
-        .network-link svg {
-            width: 22px;
-            height: 22px;
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-control {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0;
-            font-size: 1.125rem;
-            font-family: inherit;
-            color: var(--text);
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-bottom-color: var(--primary);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        /* Footer */
         footer {
-            background: var(--primary);
-            color: var(--secondary);
-            padding: 5rem 0 2rem;
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 6rem;
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-bottom: 4rem;
+        /* --- ANIMATIONS --- */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .footer-col h4 {
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links a {
-            color: #A0A0A0;
-            display: block;
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 1.25rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            color: #A0A0A0;
-            font-size: 0.875rem;
-        }
-
-        /* Modal / Case Study */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            overflow-y: auto;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-            padding: 2rem 1rem;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background: var(--surface);
-            width: 100%;
-            max-width: 900px;
-            border-radius: var(--radius-lg);
-            position: relative;
-            transform: translateY(50px);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: var(--background);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-        }
-
-        .case-study-header {
-            aspect-ratio: 21/9;
-            background: var(--border);
-            position: relative;
-        }
-        
-        .case-study-header img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .case-study-body {
-            padding: 4rem;
-        }
-
-        .cs-section {
-            margin-bottom: 3rem;
-        }
-
-        .cs-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        /* Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-            .contact-wrap { grid-template-columns: 1fr; }
-        }
-
+        /* --- RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background: var(--surface);
-                flex-direction: column;
-                justify-content: center;
-                transition: var(--transition);
-            }
-            .nav-links.active { right: 0; }
-            .menu-toggle { display: block; position: relative; z-index: 1001; }
-            
-            .section-padding { padding: 5rem 0; }
+            .hero h1 { font-size: 2.8rem; letter-spacing: -1px; }
+            nav ul { display: none; } /* Mobile Simplified Nav */
+            section { padding: 5rem 1.5rem; }
             .gallery-grid { grid-template-columns: 1fr; }
-            .case-study-body { padding: 2rem; }
-        }
-
-        @media (max-width: 480px) {
-            .logo-separator, .top-left-contact {
-                display: none;
-            }
+            .contact-content h3 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Loader -->
-    <div class="loader" id="loader">
-        <div class="spinner"></div>
-    </div>
-
-    <!-- Navigation -->
-    <header id="header">
-        <div class="container nav-container">
-            <div class="logo-group">
-                <a href="#" class="logo">T-Design Studio</a>
-                <div class="logo-separator"></div>
-                <a href="mailto:email.tasin78@gmail.com" class="top-left-contact">email.tasin78@gmail.com</a>
-            </div>
-            <button class="menu-toggle" id="menuToggle">
-                <i data-feather="menu"></i>
-            </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link btn btn-primary" style="color: white;">Start a Project</a>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-waveform-lines"></i> T-DESIGN STUDIO</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content reveal">
-                <span class="section-tag">Nurul Motasim Tasin • T-Design Studio</span>
-                <h1>Design That Helps Brands Get Noticed</h1>
-                <p style="font-size: 1.25rem; max-width: 600px;">
-                    T-Design Studio creates high-converting social media creatives, advertising designs, brand identities, packaging solutions, and motion graphics for modern businesses worldwide.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-outline">Start a Project</a>
+    <section class="hero" id="about">
+        <div class="hero-tag">Creative Studio</div>
+        <h1>Nurul Motasim Tasin</h1>
+        <p>Crafting high-end, premium minimalist visuals, custom logo identities, and impactful short-form video content tailored for next-generation brands.</p>
+        <a href="#portfolio" class="cta-btn">View Works <i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <section id="services">
+        <div class="section-header">
+            <span>Capabilities</span>
+            <h2>Our Specialized Expertise</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-bezier-curve"></i></div>
+                <h3>Brand Identity & Logos</h3>
+                <p>Developing bespoke, premium, and iconic brand identities that resonate and stand out in modern high-end markets.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-clapperboard"></i></div>
+                <h3>Short-Form Video Editing</h3>
+                <p>Polishing social media shorts, high-retention TikTok edits, and viral podcast clipping designed for extreme engagement.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+                <h3>Graphic & F-Commerce Design</h3>
+                <p>Creating highly conversion-optimized minimalist banners, covers, and promotional visuals for prominent Facebook stores.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="section-header">
+            <span>Portfolio</span>
+            <h2>Selected Visual Works</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Minimalist Branding Concept">
+                <div class="gallery-overlay">
+                    <span>Identity Design</span>
+                    <h4>ICONIC CANVAS Concept</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Premium Typography Design">
+                <div class="gallery-overlay">
+                    <span>3D Display Design</span>
+                    <h4>Depth Typography Cake Poster</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Luxury Automotive Graphics">
+                <div class="gallery-overlay">
+                    <span>Image Editing</span>
+                    <h4>Luxury Exotic Imagery Portfolio</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section-padding" style="background: var(--surface);">
-        <div class="container">
-            <div class="about-grid">
-                <div class="reveal">
-                    <span class="section-tag">About The Designer</span>
-                    <h2>Nurul Motasim Tasin</h2>
-                    <p style="font-size: 1.25rem; color: var(--text); font-weight: 500;">Graphic Designer & Creative Problem Solver</p>
-                    <p>Nurul Motasim Tasin is a graphic designer focused on creating impactful visual solutions that help brands communicate effectively and stand out in competitive markets.</p>
-                    <p>His design approach combines creativity, strategic thinking, and visual storytelling to transform ideas into compelling brand experiences. He believes great design is not only visually appealing but also solves real business challenges and creates meaningful connections between brands and their audiences.</p>
-                </div>
-                <div class="reveal about-text">
-                    <h3>Specializing in:</h3>
-                    <ul class="about-list">
-                        <li><i data-feather="check-circle"></i> Social Media Design</li>
-                        <li><i data-feather="check-circle"></i> Advertising Design</li>
-                        <li><i data-feather="check-circle"></i> Branding & Logo Design</li>
-                        <li><i data-feather="check-circle"></i> Packaging Design</li>
-                        <li><i data-feather="check-circle"></i> Motion Graphics</li>
-                    </ul>
+    <section id="tools">
+        <div class="section-header">
+            <span>Ecosystem</span>
+            <h2>Industry-Standard Stack</h2>
+        </div>
+        <div class="tools-list">
+            <div class="tool-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Canva Pro</div>
+            <div class="tool-tag"><i class="fa-solid fa-bezier-curve"></i> Adobe Photoshop</div>
+            <div class="tool-tag"><i class="fa-solid fa-film"></i> Adobe Premiere Pro</div>
+            <div class="tool-tag"><i class="fa-solid fa-bolt"></i> CapCut Desktop</div>
+            <div class="tool-tag"><i class="fa-brands fa-figma"></i> Figma</div>
+        </div>
+    </section>
 
-                    <h3>Education</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">Completed: 2024</div>
-                            <h4>Higher Secondary Certificate (HSC)</h4>
-                            <p>Govt. Shah Sultan College, Bogura</p>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">Completed: 2022</div>
-                            <h4>Secondary School Certificate (SSC)</h4>
-                            <p>Bogura Cantonment Public School & College</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="contact">
+        <div class="contact-content">
+            <h3>Let's Collaborate on Your Vision</h3>
+            <p>Ready to elevate your branding and content presentation aesthetics? Reach out directly via social platforms.</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://tiktok.com" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i> YouTube</a>
             </div>
         </div>
     </section>
 
-    <!-- Professional Interests Section -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="text-center max-w-3xl reveal">
-                <span class="section-tag">Expertise</span>
-                <h2>Professional Interests</h2>
-                <p>Constantly exploring the intersection of strategy and visual communication to deliver premium results.</p>
-            </div>
-            <div class="interests-grid reveal">
-                <div class="interest-card"><h4>Brand Identity Design</h4></div>
-                <div class="interest-card"><h4>Advertising & Marketing Design</h4></div>
-                <div class="interest-card"><h4>Social Media Creative Strategy</h4></div>
-                <div class="interest-card"><h4>Packaging Design</h4></div>
-                <div class="interest-card"><h4>Motion Graphics</h4></div>
-                <div class="interest-card"><h4>Visual Storytelling</h4></div>
-                <div class="interest-card"><h4>Creative Problem Solving</h4></div>
-                <div class="interest-card"><h4>Modern Design Trends</h4></div>
-                <div class="interest-card"><h4>User-Centered Visual Communication</h4></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="section-padding mission">
-        <div class="container reveal">
-            <span class="section-tag" style="color: rgba(255,255,255,0.5);">Mission Statement</span>
-            <p>"My goal is to help brands communicate more effectively through strategic, visually compelling, and result-driven design solutions."</p>
-        </div>
-    </section>
-
-    <!-- Credibility Section -->
-    <section class="container reveal">
-        <div class="stats-grid text-center">
-            <div class="stat-item">
-                <h3>10+</h3>
-                <p>Creative Projects Completed</p>
-            </div>
-            <div class="stat-item">
-                <h3>5</h3>
-                <p>Design Categories</p>
-            </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Strategic Approach</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Gallery Section -->
-    <section id="projects" class="section-padding" style="background: var(--surface);">
-        <div class="container">
-            <div class="text-center reveal mb-5">
-                <span class="section-tag">Portfolio Showcase</span>
-                <h2>Our Creative Gallery</h2>
-                <p class="max-w-3xl" style="margin-top: 1rem;">Explore complete case studies and visual productions filtered across specific operational criteria.</p>
-            </div>
-            
-            <div class="filters reveal">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="social">Social Media</button>
-                <button class="filter-btn" data-filter="ads">Advertising</button>
-                <button class="filter-btn" data-filter="brand">Branding</button>
-                <button class="filter-btn" data-filter="pack">Packaging</button>
-                <button class="filter-btn" data-filter="motion">Motion Graphics</button>
-            </div>
-
-            <div class="gallery-grid reveal">
-                <!-- Verified User Assets Inside Dedicated Gallery Grid -->
-                <div class="gallery-item" data-category="social" onclick="openCaseStudy('Social Creative Layout', 'Social Media', 'https://i.ibb.co.com/8LLvmsMW/New-Project-2.png')">
-                    <img src="https://i.ibb.co.com/8LLvmsMW/New-Project-2.png" alt="Social Media Production 1">
-                </div>
-                <div class="gallery-item" data-category="social" onclick="openCaseStudy('Short-Form Strategic Concept', 'Social Media', 'https://i.ibb.co.com/zHXL9f9f/Chat-GPT-Image-Jun-11-2026-11-04-54-PM.png')">
-                    <img src="https://i.ibb.co.com/zHXL9f9f/Chat-GPT-Image-Jun-11-2026-11-04-54-PM.png" alt="Social Media Production 2">
-                </div>
-                <div class="gallery-item" data-category="brand" onclick="openCaseStudy('Aura Logo System', 'Branding', 'https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=600')">
-                    <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=600" alt="Gallery Asset">
-                </div>
-                <div class="gallery-item" data-category="ads" onclick="openCaseStudy('Premium Poster Art', 'Advertising', 'https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=600')">
-                    <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&q=80&w=600" alt="Gallery Asset">
-                </div>
-                <div class="gallery-item" data-category="pack" onclick="openCaseStudy('Minimalist Package Box', 'Packaging', 'https://images.unsplash.com/photo-1530587191344-884ed0e99dce?auto=format&fit=crop&q=80&w=600')">
-                    <img src="https://images.unsplash.com/photo-1530587191344-884ed0e99dce?auto=format&fit=crop&q=80&w=600" alt="Gallery Asset">
-                </div>
-                <div class="gallery-item" data-category="motion" onclick="openCaseStudy('Kinetic Identity Piece', 'Motion Graphics', 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600')">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600" alt="Gallery Asset">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section-padding">
-        <div class="container">
-            <div class="reveal text-center max-w-3xl">
-                <span class="section-tag">Capabilities</span>
-                <h2>Services Overview</h2>
-            </div>
-
-            <div class="services-grid reveal">
-                <div class="service-card">
-                    <i data-feather="smartphone" class="service-icon"></i>
-                    <h3>Social Media Design</h3>
-                    <p>Engaging templates and creatives designed to maximize reach and conversion on social platforms.</p>
-                    <ul>
-                        <li><i data-feather="check"></i> Platform optimization</li>
-                        <li><i data-feather="check"></i> Consistent brand voice</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <i data-feather="target" class="service-icon"></i>
-                    <h3>Advertising Creatives</h3>
-                    <p>Data-driven ad designs that capture attention and drive measurable business results.</p>
-                    <ul>
-                        <li><i data-feather="check"></i> High CTR designs</li>
-                        <li><i data-feather="check"></i> A/B test variations</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <i data-feather="hexagon" class="service-icon"></i>
-                    <h3>Brand Identity</h3>
-                    <p>Comprehensive branding solutions that make your business memorable and trustworthy.</p>
-                    <ul>
-                        <li><i data-feather="check"></i> Logo systems</li>
-                        <li><i data-feather="check"></i> Brand guidelines</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <i data-feather="box" class="service-icon"></i>
-                    <h3>Packaging Design</h3>
-                    <p>Beautiful, functional packaging that stands out on shelves and enhances unboxing.</p>
-                    <ul>
-                        <li><i data-feather="check"></i> Structural strategy</li>
-                        <li><i data-feather="check"></i> Print-ready files</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <i data-feather="video" class="service-icon"></i>
-                    <h3>Motion Graphics</h3>
-                    <p>Fluid, eye-catching animations to explain concepts or elevate brand presentations.</p>
-                    <ul>
-                        <li><i data-feather="check"></i> Logo reveals</li>
-                        <li><i data-feather="check"></i> Explainer animations</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills & Tools -->
-    <section id="skills" class="section-padding" style="background: var(--surface);">
-        <div class="container">
-            <div class="about-grid">
-                <div class="reveal">
-                    <h2>Software & Tools</h2>
-                    <p>Industry-standard applications used to bring creative visions to life with precision and efficiency.</p>
-                    <div class="skills-container">
-                        <div class="skill-tag"><i data-feather="pen-tool"></i> Adobe Photoshop</div>
-                        <div class="skill-tag"><i data-feather="edit-2"></i> Adobe Illustrator</div>
-                        <div class="skill-tag"><i data-feather="video"></i> Adobe After Effects</div>
-                        <div class="skill-tag"><i data-feather="film"></i> Adobe Premiere Pro</div>
-                        <div class="skill-tag"><i data-feather="layout"></i> Canva</div>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <h2>Core Skills</h2>
-                    <p>A refined skill set focused on delivering holistic design solutions.</p>
-                    <div class="skills-container">
-                        <div class="skill-tag">Branding</div>
-                        <div class="skill-tag">Social Media Design</div>
-                        <div class="skill-tag">Advertising Design</div>
-                        <div class="skill-tag">Logo Design</div>
-                        <div class="skill-tag">Packaging Design</div>
-                        <div class="skill-tag">Motion Graphics</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="contact-wrap">
-                <div class="reveal">
-                    <span class="section-tag">Contact</span>
-                    <h2>Let's Build Something Great Together</h2>
-                    <p>Looking to elevate your brand's visual presence? Reach out to discuss your project requirements or connect across networks directly.</p>
-                    
-                    <div class="contact-networks">
-                        <a href="mailto:email.tasin78@gmail.com" class="network-link">
-                            <i data-feather="mail"></i> <span>email.tasin78@gmail.com</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/nurul-motasim-tasin-0b2a063b1/" target="_blank" rel="noopener" class="network-link">
-                            <i data-feather="linkedin"></i> <span>LinkedIn Profile</span>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61589243996397" target="_blank" rel="noopener" class="network-link">
-                            <i data-feather="facebook"></i> <span>Facebook Page</span>
-                        </a>
-                        <a href="https://www.instagram.com/_tasin_09/" target="_blank" rel="noopener" class="network-link">
-                            <i data-feather="instagram"></i> <span>Instagram Handle</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <form onsubmit="event.preventDefault(); alert('Message sent successfully! (Demo)');">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Project Type (e.g. Branding, Packaging)">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Message Details" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 style="color: white; margin-bottom: 0.5rem;">T-Design Studio</h3>
-                    <p style="color: #A0A0A0; font-size: 0.95rem; margin-bottom: 1rem;">Designing Visuals That Drive Results.</p>
-                    <p style="color: #A0A0A0; font-size: 0.85rem;">Founded & Operated by<br>Nurul Motasim Tasin</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <div class="footer-links">
-                        <a href="#home">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#services">Services</a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect</h4>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/_tasin_09/" target="_blank" rel="noopener" style="color: #A0A0A0;"><i data-feather="instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/nurul-motasim-tasin-0b2a063b1/" target="_blank" rel="noopener" style="color: #A0A0A0;"><i data-feather="linkedin"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61589243996397" target="_blank" rel="noopener" style="color: #A0A0A0;"><i data-feather="facebook"></i></a>
-                        <a href="mailto:email.tasin78@gmail.com" style="color: #A0A0A0;"><i data-feather="mail"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div>&copy; 2026 T-Design Studio. All rights reserved.</div>
-                <div>Designed by Nurul Motasim Tasin</div>
-            </div>
-        </div>
+        <p>&copy; 2026 T-Design Studio. All Rights Reserved. Crafted with minimalist excellence.</p>
     </footer>
 
-    <!-- Case Study Modal -->
-    <div class="modal-overlay" id="caseStudyModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeCaseStudy()"><i data-feather="x"></i></button>
-            <div class="case-study-header">
-                <img src="" alt="Case Study Image Target" id="modalImage">
-            </div>
-            <div class="case-study-body">
-                <span class="section-tag" id="modalCategory">Category</span>
-                <h2 id="modalTitle">Project Title</h2>
-                
-                <div class="cs-section">
-                    <h3>Project Overview & Client Background</h3>
-                    <p>The client is a premium entity seeking to scale operations globally. They looked to T-Design Studio to restructure and redefine their complete aesthetic footprint across core modern media landscapes.</p>
-                </div>
-                
-                <div class="cs-section">
-                    <h3>Problem Statement & Objective</h3>
-                    <p>Prior positioning lacked asset continuity and dynamic styling, failing to generate engagement from international audience target segments. The structural goal was to forge clear design hierarchies through strategic engineering.</p>
-                </div>
-
-                <div class="cs-section">
-                    <h3>Research & Creative Strategy</h3>
-                    <p>Executing detailed discovery sprints indicated that sleek layouts paired with pristine structural asymmetry deliver maximum retention. Brand values are layered tightly into minimal high-end configurations.</p>
-                </div>
-
-                <div class="cs-section">
-                    <h3>Design Process & Solution</h3>
-                    <p>Production scaled meticulously from system frameworks into fully stylized deliverables. Every geometric trace and asset orientation serves crisp user interaction parameters, resolving key workflow friction points seamlessly.</p>
-                </div>
-
-                <div class="cs-section">
-                    <h3>Outcome, Impact & Key Takeaways</h3>
-                    <p>The solution yielded measurable growth spikes across strategic engagement metrics. Modern design remains an active tactical engine when tailored with extreme precision to handle absolute corporate and product communication goals.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
     <script>
-        // Initialize Icons
-        feather.replace();
-
-        // Loader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 500);
-        });
-
-        // Sticky Nav & Scroll Events
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile Menu
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        const navItems = document.querySelectorAll('.nav-link');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Scroll Reveal Animation
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            root: null,
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Portfolio Gallery Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                galleryItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
-                        }, 50);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.8)';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
+        // Smooth scrolling interaction reveal
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+            
+            const options = {
+                threshold: 0.15
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                        observer.unobserve(entry.target);
                     }
                 });
+            }, options);
+            
+            // Apply subtle entry effects to sections for a fluid user experience
+            sections.forEach(section => {
+                if(section.id !== 'about') { // Bypass hero animation handling
+                    section.style.opacity = "0";
+                    section.style.transform = "translateY(40px)";
+                    section.style.transition = "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease";
+                    observer.observe(section);
+                }
             });
-        });
-
-        // Case Study Modal Logic with Dynamic Image Updates
-        const modal = document.getElementById('caseStudyModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalCategory = document.getElementById('modalCategory');
-        const modalImage = document.getElementById('modalImage');
-        
-        function openCaseStudy(title, category, imgSrc) {
-            modalTitle.innerText = title;
-            modalCategory.innerText = category;
-            modalImage.src = imgSrc || 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=1200';
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeCaseStudy() {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeCaseStudy();
-            }
         });
     </script>
 </body>
